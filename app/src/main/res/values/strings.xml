@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">YemeklerProje</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="baslik_ekler">Ekler</string>
+    <string name="baslik_yem">Yem</string>
+    <string name="siparislerin">Siparişlerin</string>
+    <string name="fiyat">Fiyat</string>
+    <string name="alfabe">Alfabe</string>
+    <string name="favoriler">Favoriler</string>
+    <string name="anasayfaya_git">AnaSayfaya Git</string>
+    <string name="gecmis_siparisleriniz">Geçmiş Siparişleriniz</string>
+    <string name="hos_geldin">Hoş Geldin</string>
+    <string name="beni_hatirla">Beni Hatırla</string>
+    <string name="kullanici_adini_giriniz">Kullanıcı Adınızı Giriniz</string>
+    <string name="sifir">0</string>
+    <string name="siparis_ver">Sipariş Ver</string>
+    <string name="siparisiniz_alinmistir">Siparişiniz Alınmıştır</string>
+    <string name="siparislerine_git">Siparişlerine Git</string>
+    <string name="cevreyi_koru">Çevreyi Koru</string>
+    <string name="cevreyi_koru_metin">Plastik çatal, plastik bıçak, peçete gönderme.</string>
+    <string name="odeme_secenekleri">Ödeme Seçenekleri</string>
+    <string name="odeme_secenekleri1">Kapıda Nakit Ödeme</string>
+    <string name="odeme_secenekleri2">Kapıda Kartla Ödeme</string>
+    <string name="zili_calma">Zili Çalma</string>
+    <string name="degisiklikleri_kaydet">Değişiklikleri Kaydet</string>
+    <string name="sepete_ekle">Sepete Ekle</string>
+    <string name="sifir_tl">₺ 0</string>
+    <string name="not_ekle">Eklemek istediğiniz bir not varsa:</string>
+    <string name="not_ekleyin">Not ekleyin</string>
+</resources>

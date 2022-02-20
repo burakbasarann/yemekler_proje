@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/loginEkraniFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.basaran.yemeklerproje.fragment.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/yemekDetayGecis"
+            app:destination="@id/yemekDetayFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/sepetGecis"
+            app:destination="@id/sepetFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/anaSayfadanFavorilereGecis"
+            app:destination="@id/favorilerFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/anaSayfadanGecmisSiparislereGecis"
+            app:destination="@id/gecmisSiparislerFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/yemekDetayFragment"
+        android:name="com.basaran.yemeklerproje.fragment.YemekDetayFragment"
+        android:label="fragment_yemek_detay"
+        tools:layout="@layout/fragment_yemek_detay">
+        <argument
+            android:name="yemek"
+            app:argType="com.basaran.yemeklerproje.entity.Yemekler" />
+        <action
+            android:id="@+id/detaydanSepeteGecis"
+            app:destination="@id/sepetFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.basaran.yemeklerproje.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <action
+            android:id="@+id/siparisGecis"
+            app:destination="@id/siparisFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginEkraniFragment"
+        android:name="com.basaran.yemeklerproje.fragment.LoginEkraniFragment"
+        android:label="LoginEkraniFragment" >
+        <action
+            android:id="@+id/logindenAnaSayfayaGecis"
+            app:destination="@id/anaSayfaFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/siparisFragment"
+        android:name="com.basaran.yemeklerproje.fragment.SiparisFragment"
+        android:label="fragment_siparis"
+        tools:layout="@layout/fragment_siparis" >
+        <action
+            android:id="@+id/siparistenAnaSayfayaGecis"
+            app:destination="@id/anaSayfaFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/anaSayfaFragment" />
+        <action
+            android:id="@+id/siparistenGecmisSiparislereGecis"
+            app:destination="@id/gecmisSiparislerFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favorilerFragment"
+        android:name="com.basaran.yemeklerproje.fragment.FavorilerFragment"
+        android:label="FavorilerFragment" >
+        <action
+            android:id="@+id/favoridenAnasayfayaGecis"
+            app:destination="@id/anaSayfaFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <action
+            android:id="@+id/favorilerdenDetayaGecis"
+            app:destination="@id/yemekDetayFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gecmisSiparislerFragment"
+        android:name="com.basaran.yemeklerproje.fragment.GecmisSiparislerFragment"
+        android:label="GecmisSiparislerFragment" />
+</navigation>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="yemeklerAdapter" type="com.basaran.yemeklerproje.adapter.YemeklerAdapter" />
+        <variable name="promosyonAdapter" type="com.basaran.yemeklerproje.adapter.PromosyonAdapter" />
+        <variable name="anasayfaFragment" type="com.basaran.yemeklerproje.fragment.AnaSayfaFragment" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.AnaSayfaFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pacificoo"
+                android:text="@string/baslik_yem"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="14dp" />
+
+            <TextView
+                android:id="@+id/txtToolbar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pacificoo"
+                android:text="@string/baslik_ekler"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="14dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvYemekList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:adapter="@{yemeklerAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonKucuktenBuyuge"
+            app:spanCount="2" />
+
+        <Button
+            android:id="@+id/buttonGecmisSiparisGecis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:onClick="@{() -> anasayfaFragment.buttonSiparisGecmisineGecis()}"
+            android:text="@string/siparislerin"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAlfteSiralama"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonFavoriler"
+            app:layout_constraintTop_toBottomOf="@+id/rvPromosyonlist" />
+
+        <Button
+            android:id="@+id/buttonKucuktenBuyuge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/sirala_fiyat"
+            android:text="@string/fiyat"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonAlfteSiralama"
+            app:layout_constraintTop_toBottomOf="@+id/rvPromosyonlist" />
+
+        <Button
+            android:id="@+id/buttonAlfteSiralama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/sirala_alfabe"
+            android:text="@string/alfabe"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonKucuktenBuyuge"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonGecmisSiparisGecis"
+            app:layout_constraintTop_toBottomOf="@+id/rvPromosyonlist" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPromosyonlist"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:adapter="@{promosyonAdapter}"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <ImageView
+            android:id="@+id/buttonFavoriler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/favoridoluu"
+            android:onClick="@{() -> anasayfaFragment.buttonFavorilerGecis()}"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonGecmisSiparisGecis"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvPromosyonlist" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
